@@ -19,12 +19,51 @@ const TestimonialsSection = () => {
     },
   ]
 
+  const logos = [
+    "/images/logo1.png",
+    "/images/logo2.jpg",
+    "/images/logo3.jpg",
+    "/images/logo4.jpg",
+    "/images/logo5.png",
+    "/images/logo6.png",
+    "/images/logo7.png",
+    "/images/logo8.jpg",
+    "/images/logo9.png",
+    "/images/logo10.png",
+    "/images/logo11.png",
+  ]
+
   return (
     <div className="w-full py-16">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div>
           <p className="text-secondary text-sm uppercase tracking-wider">What others say</p>
           <h2 className="text-white text-4xl font-bold mt-2 mb-6">Testimonials.</h2>
+        </div>
+
+        <div className="mb-12 overflow-hidden">
+          <div className="flex animate-scroll">
+            {/* First set of logos */}
+            {logos.map((logo, index) => (
+              <div key={index} className="flex-shrink-0 mx-8">
+                <img
+                  src={logo || "/placeholder.svg"}
+                  alt={`Logo ${index + 1}`}
+                  className="h-16 w-auto object-contain filter grayscale opacity-70 hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {logos.map((logo, index) => (
+              <div key={`duplicate-${index}`} className="flex-shrink-0 mx-8">
+                <img
+                  src={logo || "/placeholder.svg"}
+                  alt={`Logo ${index + 1}`}
+                  className="h-16 w-auto object-contain filter grayscale opacity-70 hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
@@ -52,6 +91,21 @@ const TestimonialsSection = () => {
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        
+        .animate-scroll {
+          animation: scroll 30s linear infinite;
+        }
+      `}</style>
     </div>
   )
 }
