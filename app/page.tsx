@@ -6,6 +6,7 @@ import ProjectSection from "@/components/projects-section"
 import TestimonialsSection from "@/components/testimonials-section"
 import ContactSection from "@/components/contact-section"
 import { TracingBeam } from "@/components/tracing-beam"
+import Footer from "@/components/footer"
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <TestimonialsSection />
         <ContactSection />
       </TracingBeam>
+      <Footer />
     </main>
   )
 }
