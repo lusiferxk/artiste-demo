@@ -25,7 +25,7 @@ const ServiceCard = ({ title, icon, description }) => (
 
 const About = () => {
   return (
-    <div className="w-full py-16 relative">
+    <div className="w-full py-16 relative" id="about">
       {/* Subtle gradient overlay at the top for smooth transition */}
       <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-primary/60 to-transparent pointer-events-none"></div>
 

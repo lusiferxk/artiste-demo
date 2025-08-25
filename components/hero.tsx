@@ -2,7 +2,7 @@
 
 export default function Hero() {
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden" id="home">
       {/* Background iFrame */}
       <iframe
         src="https://my.spline.design/untitled-6217a740e713536b7272ab5ddfaf3442/?storefront=envato-elements"

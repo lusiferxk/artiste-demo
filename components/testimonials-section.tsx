@@ -34,7 +34,7 @@ const TestimonialsSection = () => {
   ]
 
   return (
-    <div className="w-full py-16">
+    <div className="w-full py-16" id="testimonials">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div>
           <p className="text-secondary text-sm uppercase tracking-wider">What others say</p>

@@ -6,7 +6,7 @@ import { Mail, Phone, MapPin, Globe } from "lucide-react" // Lucide icons for co
 
 const ContactSection = () => {
   return (
-    <div className="w-full py-16">
+    <div className="w-full py-16" id="contact">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div>
           <p className="text-secondary text-sm uppercase tracking-wider">Get in touch</p>
