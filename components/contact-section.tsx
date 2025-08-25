@@ -71,7 +71,7 @@ const ContactSection = () => {
                 </p>
                 <p className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-secondary flex-shrink-0" />
-                  <span className="text-sm sm:text-base">sales@artisteconnection.com</span>
+                  <span className="text-sm sm:text-base">kao@artisteconnection.com</span>
                 </p>
                 <p className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-secondary mt-1 flex-shrink-0" />
