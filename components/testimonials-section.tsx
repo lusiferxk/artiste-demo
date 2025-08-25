@@ -21,13 +21,13 @@ const TestimonialsSection = () => {
 
   const logos = [
     "/images/logo1.png",
-    "/images/logo2.jpg",
+    "/images/logo2.png",
     "/images/logo3.jpg",
     "/images/logo4.jpg",
     "/images/logo5.png",
     "/images/logo6.png",
     "/images/logo7.png",
-    "/images/logo8.jpg",
+    "/images/logo8.png",
     "/images/logo9.png",
     "/images/logo10.png",
     "/images/logo11.png",
