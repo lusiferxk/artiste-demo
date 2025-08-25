@@ -66,7 +66,7 @@
 import { useState, useEffect } from "react"
 
 export default function Header() {
-  const navItems = ["Home", "About", "Contact", "Testimonials", "Projects"]
+  const navItems = ["Home", "About", "Principles", "Projects", "Testimonials", "Contact"]
   const [active, setActive] = useState("Home")
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
