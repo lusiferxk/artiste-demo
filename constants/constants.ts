@@ -1,22 +1,22 @@
 export const services = [
   {
-    title: "Web Development",
-    icon: "/placeholder.svg?height=64&width=64",
+    title: "Web & Apps",
+    icon: "/models/radiant-liquid-sphere.webm",
     description: "Building responsive and high-performance web applications.",
   },
   {
-    title: "Mobile Development",
-    icon: "/placeholder.svg?height=64&width=64",
+    title: "Events",
+    icon: "/models/infinity-blubs.webm",
     description: "Creating native and cross-platform mobile apps for iOS and Android.",
   },
   {
-    title: "UI/UX Design",
-    icon: "/placeholder.svg?height=64&width=64",
+    title: "Productions",
+    icon: "/models/kumar.webm",
     description: "Designing intuitive and engaging user interfaces and experiences.",
   },
   {
-    title: "Digital Marketing",
-    icon: "/placeholder.svg?height=64&width=64",
+    title: "Marketing",
+    icon: "/models/orb.webm",
     description: "Implementing strategies for SEO, social media, and content marketing.",
   },
 ];
