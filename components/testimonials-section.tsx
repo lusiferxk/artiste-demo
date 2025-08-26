@@ -43,7 +43,6 @@ const TestimonialsSection = () => {
 
         <div className="mb-12 overflow-hidden">
           <div className="flex animate-scroll">
-            {/* First set of logos */}
             {logos.map((logo, index) => (
               <div key={index} className="flex-shrink-0 mx-8">
                 <img
@@ -53,7 +52,6 @@ const TestimonialsSection = () => {
                 />
               </div>
             ))}
-            {/* Duplicate set for seamless loop */}
             {logos.map((logo, index) => (
               <div key={`duplicate-${index}`} className="flex-shrink-0 mx-8">
                 <img

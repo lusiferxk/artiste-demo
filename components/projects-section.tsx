@@ -1,6 +1,12 @@
 "use client"
 
-const ProjectCard = ({ title, description, imageUrl }) => (
+type ProjectCardContent = {
+  title: string,
+  description: String,
+  imageUrl: string
+}
+
+const ProjectCard = ({ title, description, imageUrl }: ProjectCardContent) => (
   <div className="bg-tertiary p-6 rounded-[20px] shadow-card flex flex-col">
     <img
       src={imageUrl || "/placeholder.svg?height=200&width=300&query=project-thumbnail"}
@@ -9,7 +15,6 @@ const ProjectCard = ({ title, description, imageUrl }) => (
     />
     <h3 className="text-white text-xl font-bold mb-2">{title}</h3>
     <p className="text-secondary text-sm leading-[1.6] flex-grow">{description}</p>
-    {/* You can add a "View Project" button here if needed */}
   </div>
 )
 

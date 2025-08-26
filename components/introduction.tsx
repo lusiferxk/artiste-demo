@@ -2,7 +2,13 @@
 
 import { services } from "@/constants/constants"
 
-const ServiceCard = ({ title, icon, description }) => {
+type ServiceCardContent = {
+  title: String,
+  description: String,
+  icon: string
+}
+
+const ServiceCard = ({ title, icon, description }: ServiceCardContent) => {
   const isVideo = icon?.endsWith(".webm") || icon?.endsWith(".mp4")
   const isGif = icon?.endsWith(".gif")
 
@@ -27,7 +33,7 @@ const ServiceCard = ({ title, icon, description }) => {
             />
           ) : (
             <img
-              src={icon || "/placeholder.svg"}
+              src={icon}
               alt={title.toLowerCase().replace(/\s+/g, "-")}
               className="w-24 h-24 object-contain mb-4"
             />
@@ -49,7 +55,6 @@ const ServiceCard = ({ title, icon, description }) => {
 const About = () => {
   return (
     <div className="w-full py-16 relative" id="about">
-      {/* Subtle gradient overlay at the top for smooth transition */}
       <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-primary/60 to-transparent pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
