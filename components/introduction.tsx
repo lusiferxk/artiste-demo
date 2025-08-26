@@ -1,5 +1,8 @@
 "use client"
 
+import { useEffect } from "react"
+import AOS from "aos"
+import "aos/dist/aos.css"
 import { services } from "@/constants/constants"
 
 type ServiceCardContent = {
@@ -13,7 +16,12 @@ const ServiceCard = ({ title, icon, description }: ServiceCardContent) => {
   const isGif = icon?.endsWith(".gif")
 
   return (
-    <div className="green-pink-gradient p-[1px] rounded-[20px] shadow-card">
+    <div
+      className="green-pink-gradient p-[1px] rounded-[20px] shadow-card"
+      data-aos="zoom-in"
+      data-aos-duration="800"
+      data-aos-easing="ease-in-out"
+    >
       <div className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex flex-col justify-evenly items-center relative group overflow-hidden">
         <div className="flex flex-col items-center transition-all duration-500 group-hover:opacity-0 group-hover:-translate-y-4">
           {isVideo || isGif ? (
@@ -51,19 +59,32 @@ const ServiceCard = ({ title, icon, description }: ServiceCardContent) => {
   )
 }
 
-
 const About = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true, // animate only once
+      mirror: false, // don't animate out on scroll up
+      offset: 100, // trigger animation earlier
+    })
+  }, [])
+
   return (
     <div className="w-full py-16 relative" id="about">
       <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-primary/60 to-transparent pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
-        <div>
+        <div data-aos="fade-down" data-aos-duration="800" data-aos-easing="ease-in-out">
           <p className="text-secondary text-sm uppercase tracking-wider">Introduction</p>
           <h2 className="text-white text-4xl font-bold mt-2 mb-6">Overview.</h2>
         </div>
 
-        <p className="mt-4 text-white-100 text-[17px] max-w-4xl leading-[30px]">
+        <p
+          className="mt-4 text-white-100 text-[17px] max-w-4xl leading-[30px]"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           Artiste Connection Pvt Ltd is a Sri Lankan-based design-driven marketing consultancy, established in 2019. We
           are committed to offer 360° marketing solutions that cover every facet of modern brand-building and marketing.
           From Marketing Strategy to in-depth research & branding. Whether you're a startup looking to establish a
@@ -71,13 +92,24 @@ const About = () => {
           deliver not just quantitative but qualitative results.
         </p>
 
-        <p className="mt-4 text-white-100 text-[17px] font-normal max-w-4xl leading-[30px]">
+        <p
+          className="mt-4 text-white-100 text-[17px] font-normal max-w-4xl leading-[30px]"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="200"
+        >
           We deliver innovative, tailored solutions that enhance business growth.
         </p>
 
         <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
-          {services.map((service) => (
-            <div className="w-full max-w-[280px]" key={service.title}>
+          {services.map((service, index) => (
+            <div
+              className="w-full max-w-[280px]"
+              key={service.title}
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay={index * 100} // stagger animations
+            >
               <ServiceCard {...service} />
             </div>
           ))}

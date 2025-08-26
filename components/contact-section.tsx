@@ -2,11 +2,11 @@
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
-import { Mail, Phone, MapPin, Globe } from "lucide-react" // Lucide icons for contact info
+import { Mail, Phone, MapPin, Globe } from "lucide-react"
 
 const ContactSection = () => {
   return (
-    <div className="w-full py-16" id="contact">
+    <div className="w-full py-16" id="contact" data-aos="fade-up">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div>
           <p className="text-secondary text-sm uppercase tracking-wider">Get in touch</p>

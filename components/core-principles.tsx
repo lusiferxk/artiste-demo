@@ -1,6 +1,8 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import AOS from "aos"
+import "aos/dist/aos.css"
 import { Eye, Target, Heart } from "lucide-react"
 
 const CorePrinciples = () => {
@@ -163,10 +165,19 @@ const CorePrinciples = () => {
   const [progress, setProgress] = useState(0)
 
   useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+      offset: 100,
+    })
+  }, [])
+
+  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % principles.length)
-      setProgress(0) // Reset progress when slide changes
-    }, 5000) // Slide every 5 seconds
+      setProgress(0)
+    }, 5000)
 
     return () => clearInterval(interval)
   }, [principles.length])
@@ -174,10 +185,8 @@ const CorePrinciples = () => {
   useEffect(() => {
     const progressInterval = setInterval(() => {
       setProgress((prev) => {
-        if (prev >= 100) {
-          return 0
-        }
-        return prev + 2 // Increment by 2% every 100ms (5 seconds total)
+        if (prev >= 100) return 0
+        return prev + 2
       })
     }, 100)
 
@@ -192,13 +201,13 @@ const CorePrinciples = () => {
   return (
     <div className="w-full py-16" id="principles">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div>
+        <div data-aos="fade-down" data-aos-duration="800">
           <p className="text-secondary text-sm uppercase tracking-wider">Our Core Principles</p>
           <h2 className="text-white text-4xl font-bold mt-2 mb-6">Vision, Mission & Values.</h2>
         </div>
 
         <div className="relative mt-12">
-          <div className="overflow-hidden rounded-[20px]">
+          <div className="overflow-hidden rounded-[20px]" data-aos="fade-up" data-aos-duration="1000">
             <div
               className="flex transition-transform duration-700 ease-in-out"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -207,6 +216,9 @@ const CorePrinciples = () => {
                 <div
                   key={index}
                   className="flex-shrink-0 w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
+                  data-aos="zoom-in"
+                  data-aos-duration="1000"
+                  data-aos-delay={index * 200}
                 >
                   <div className="bg-tertiary rounded-[20px] py-8 px-6 sm:px-8 lg:px-10 min-h-[500px]">
                     <h3 className="text-white text-2xl sm:text-3xl font-bold mb-4 relative pb-2">
@@ -220,7 +232,12 @@ const CorePrinciples = () => {
             </div>
           </div>
 
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center space-x-4 z-20">
+          <div
+            className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center space-x-4 z-20"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay={500}
+          >
             {principles.map((principle, index) => (
               <button
                 key={index}

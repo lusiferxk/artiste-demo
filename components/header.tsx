@@ -39,7 +39,7 @@ export default function Header() {
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="bg-transparent backdrop-blur-xl border-b border-white/5">
+      <div className="bg-transparent backdrop-blur-sm border-b border-white/5">
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex items-center justify-between h-16">
             {/* Navigation (right side) */}

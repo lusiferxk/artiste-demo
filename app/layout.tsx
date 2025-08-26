@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Inter } from 'next/font/google'
 import "./globals.css"
 import SplashLoader from "@/components/splash-loader"
+import ScrollProvider from "@/providers/scroll-provider";
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -20,7 +21,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} bg-[#050816]`}>
         <SplashLoader>
-          {children}
+          <ScrollProvider>
+            {children}
+          </ScrollProvider>
         </SplashLoader>
       </body>
     </html>
