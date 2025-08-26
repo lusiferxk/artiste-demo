@@ -1,8 +1,21 @@
 "use client"
 
+import { useEffect } from "react"
+import AOS from "aos"
+import "aos/dist/aos.css"
+
 export default function Hero() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+      easing: "ease-in-out",
+      once: true,
+      offset: 50,
+    })
+  }, [])
+
   return (
-    <div className="relative w-full h-screen overflow-hidden" id="home" data-aos="zoom-in">
+    <div className="relative w-full h-screen overflow-hidden" id="home">
       {/* Background iFrame */}
       <iframe
         src="https://my.spline.design/untitled-6217a740e713536b7272ab5ddfaf3442/?storefront=envato-elements"
@@ -25,8 +38,15 @@ export default function Hero() {
             src="/logo.svg"
             alt="Artiste Connection Logo"
             className="w-full max-w-[40rem] lg:max-w-[50rem] filter brightness-0 invert"
+            data-aos="zoom-in"
+            data-aos-duration="1200"
           />
-          <p className="mt-6 text-white text-2xl sm:text-3xl font-light tracking-wide max-w-2xl">
+          <p
+            className="mt-6 text-white text-2xl sm:text-3xl font-light tracking-wide max-w-2xl"
+            data-aos="fade-up"
+            data-aos-duration="1200"
+            data-aos-delay={300}
+          >
             Driven by creatives, for creatives
           </p>
         </div>
